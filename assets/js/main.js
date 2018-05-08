@@ -66,12 +66,8 @@ function main() {
 	let osm = new L.TileLayer(osmUrl, {attribution: osmAttrib});		
 
 	// start the map in South-East England
-	mainMap.setView(new L.LatLng(51.3, 0.7),6);
+	mainMap.setView(new L.LatLng(-2.3186833,99.3352008), 5);
     mainMap.addLayer(osm);
-	
-	// adding search layer
-	let searchLayer = L.layerGroup().addTo(mainMap);
-	mainMap.addControl( new L.Control.Search({layer: searchLayer}) );
 
     askForPlots();
 	mainMap.on('moveend', onMapMove);
